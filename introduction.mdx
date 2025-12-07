@@ -1,0 +1,103 @@
+---
+title: Introduction
+description: Overview of Kottlin Tri and its core capabilities for managing GitHub repository documentation
+---
+
+## Getting Started
+
+Kottlin Tri is a powerful documentation platform designed specifically for GitHub repositories, enabling teams to create, organize, and publish comprehensive technical documentation. This platform transforms your repository's README into a full-featured documentation site with multiple MDX pages, API references, and automated changelog management.
+
+<Columns cols={3}>
+  <Card title="Easy Setup" icon="rocket" href="#quick-start">
+    Get started in minutes with our streamlined onboarding process.
+  </Card>
+  <Card title="Multi-Page Support" icon="file-text" href="#documentation-structure">
+    Create rich, interconnected documentation with multiple MDX pages.
+  </Card>
+  <Card title="API Integration" icon="code" href="#api-reference">
+    Automatically generate API documentation from OpenAPI specifications.
+  </Card>
+</Columns>
+
+## Key Features
+
+<Tabs>
+  <Tab title="Documentation" icon="book">
+    Create comprehensive documentation with support for multiple MDX pages, rich components, and interactive elements.
+
+    <Callout kind="tip">Use components like Cards, Steps, and CodeGroups to make your documentation engaging and user-friendly.</Callout>
+  </Tab>
+  <Tab title="API Reference" icon="terminal">
+    Generate API documentation automatically from your OpenAPI specifications with detailed endpoint descriptions.
+
+    <Callout kind="info">Supports YAML and JSON OpenAPI formats for maximum compatibility.</Callout>
+  </Tab>
+  <Tab title="Changelog" icon="clock">
+    Maintain version history with structured changelog entries using our Update components.
+
+    <Expandable title="Changelog Benefits" default-open="false">
+      - Track feature releases
+      - Document breaking changes
+      - Highlight bug fixes
+    </Expandable>
+  </Tab>
+</Tabs>
+
+## Quick Start Guide
+
+<Steps>
+  <Step title="Set Up Repository" icon="folder">
+    Create a new GitHub repository or use an existing one for your documentation.
+  </Step>
+  <Step title="Install Kottlin Tri" icon="download">
+    <CodeGroup tabs="npm,yarn">
+      ```bash
+      npm install kottlin-tri
+      ```
+      ```bash
+      yarn add kottlin-tri
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Configure Documentation" icon="settings">
+    Add your documentation.json configuration and create MDX pages.
+  </Step>
+  <Step title="Deploy" icon="rocket">
+    Deploy your documentation site and share with your team.
+  </Step>
+</Steps>
+
+## Documentation Structure
+
+Kottlin Tri supports a flexible documentation structure with tabs, groups, and pages. You can organize your content into logical sections, include code examples, and add interactive components.
+
+<ExpandableGroup>
+  <Expandable title="Page Organization" default-open="true">
+    Organize your documentation into clear sections with introduction, core concepts, and advanced topics.
+  </Expandable>
+  <Expandable title="Component Library" default-open="false">
+    Use our rich component library including Cards, Tabs, Steps, and Callouts for better user experience.
+  </Expandable>
+  <Expandable title="Code Examples" default-open="false">
+    Include practical code examples with syntax highlighting and multi-language support.
+  </Expandable>
+</ExpandableGroup>
+
+## Best Practices
+
+<Callout kind="success">Always start with a clear introduction and use consistent formatting across all pages.</Callout>
+
+| Best Practice | Description |
+|---------------|-------------|
+| Self-contained pages | Each page should define terms on first use |
+| Active voice | Use present tense and second person |
+| Component diversity | Mix 5-8 different components per page |
+| Code examples | Include realistic, working code snippets |
+
+## Support and Resources
+
+For additional help, check out our comprehensive documentation or reach out to our support team.
+
+<Card title="GitHub Repository" icon="github" href="https://github.com/kottlin-tri/docs" target="_blank" cta="View Source">
+  Explore the source code and contribute to Kottlin Tri.
+</Card>

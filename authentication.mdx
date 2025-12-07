@@ -1,0 +1,118 @@
+---
+title: Authentication
+description: Learn how to authenticate with Kottlin Tri APIs and secure your documentation access
+---
+
+## Overview
+
+Authentication is crucial for securing access to your Kottlin Tri documentation and APIs. This guide covers various authentication methods, including API keys, OAuth tokens, and session management.
+
+<Columns cols={2}>
+  <Card title="API Key Authentication" icon="key" href="#api-keys">
+    Use API keys for programmatic access to documentation endpoints.
+  </Card>
+  <Card title="OAuth Integration" icon="shield" href="#oauth">
+    Implement OAuth 2.0 for user authentication and authorization.
+  </Card>
+</Columns>
+
+## API Keys
+
+API keys provide a simple way to authenticate requests to Kottlin Tri APIs. You can generate API keys in your account settings.
+
+<Steps>
+  <Step title="Generate API Key" icon="plus">
+    Navigate to your account settings and create a new API key.
+  </Step>
+  <Step title="Configure Key" icon="settings">
+    Set appropriate permissions for read, write, or admin access.
+  </Step>
+  <Step title="Use in Requests" icon="send">
+    Include the API key in your request headers.
+    <CodeGroup tabs="curl,python">
+      ```bash
+      curl -H "Authorization: Bearer YOUR_API_KEY" https://api.kottlin-tri.com/docs
+      ```
+      ```python
+import requests
+
+response = requests.get('https://api.kottlin-tri.com/docs', 
+                        headers={'Authorization': 'Bearer YOUR_API_KEY'})
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
+
+## OAuth 2.0
+
+OAuth 2.0 provides a secure way to authenticate users and grant access to resources without sharing credentials.
+
+<Tabs>
+  <Tab title="Authorization Code" icon="code">
+    Use authorization code flow for web applications.
+    <Callout kind="info">This flow is recommended for server-side applications.</Callout>
+  </Tab>
+  <Tab title="Implicit Grant" icon="eye">
+    Use implicit flow for client-side applications.
+    <Callout kind="alert">This flow is less secure and should be used carefully.</Callout>
+  </Tab>
+  <Tab title="Client Credentials" icon="server">
+    Use client credentials flow for machine-to-machine authentication.
+    <Callout kind="tip">Ideal for automated processes and API integrations.</Callout>
+  </Tab>
+</Tabs>
+
+## Session Management
+
+Proper session management ensures secure and efficient user experiences.
+
+<ExpandableGroup>
+  <Expandable title="Session Creation" default-open="true">
+    Sessions are created upon successful authentication and include user information.
+  </Expandable>
+  <Expandable title="Token Refresh" default-open="false">
+    Implement token refresh logic to maintain active sessions without re-authentication.
+  </Expandable>
+  <Expandable title="Session Expiry" default-open="false">
+    Handle session expiry gracefully with appropriate error messages and re-authentication prompts.
+  </Expandable>
+</ExpandableGroup>
+
+## Security Best Practices
+
+<Callout kind="danger">Never store API keys or tokens in publicly accessible locations.</Callout>
+
+| Security Practice | Implementation |
+|-------------------|----------------|
+| Token Rotation | Regularly rotate API keys and tokens |
+| HTTPS Only | Always use HTTPS for authentication requests |
+| Rate Limiting | Implement rate limiting to prevent abuse |
+| Audit Logging | Log authentication attempts for security monitoring |
+
+## Troubleshooting
+
+Common authentication issues and their solutions.
+
+<Expandable title="Invalid API Key" default-open="false">
+  Verify your API key is correct and has not expired. Check for extra spaces or characters.
+</Expandable>
+
+<Expandable title="OAuth Redirect Issues" default-open="false">
+  Ensure your redirect URIs are properly configured in your OAuth application settings.
+</Expandable>
+
+<Expandable title="Session Timeout" default-open="false">
+  Implement automatic token refresh or prompt users to re-authenticate when sessions expire.
+</Expandable>
+
+## API Authentication Endpoints
+
+Use these endpoints for authentication-related operations.
+
+<Card title="Authenticate User" icon="user" href="/api/authenticate" cta="View API Docs">
+  Authenticate a user with credentials.
+</Card>
+
+<Card title="Refresh Token" icon="refresh-cw" href="/api/refresh" cta="View API Docs">
+  Refresh an expired access token.
+</Card>

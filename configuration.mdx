@@ -1,0 +1,150 @@
+---
+title: Configuration
+description: Configure your Kottlin Tri documentation site with settings, themes, and customization options
+---
+
+## Configuration Overview
+
+Kottlin Tri offers extensive configuration options to customize your documentation site. From basic settings to advanced theming, you can tailor the experience to match your brand and requirements.
+
+<Columns cols={2}>
+  <Card title="Basic Settings" icon="settings" href="#basic-config">
+    Configure site name, description, and essential options.
+  </Card>
+  <Card title="Advanced Options" icon="sliders" href="#advanced-config">
+    Fine-tune themes, navigation, and performance settings.
+  </Card>
+</Columns>
+
+## Basic Configuration
+
+Start with fundamental settings that define your documentation site.
+
+<Steps>
+  <Step title="Site Information" icon="info">
+    Set your site name and description in the configuration file.
+  </Step>
+  <Step title="Navigation Setup" icon="menu">
+    Define your navigation structure with tabs and groups.
+  </Step>
+  <Step title="Theme Selection" icon="palette">
+    Choose between light and dark themes or customize colors.
+  </Step>
+</Steps>
+
+## documentation.json Configuration
+
+The main configuration file controls your entire documentation structure.
+
+<CodeGroup tabs="json,yaml">
+  ```json
+  {
+    "name": "My Documentation",
+    "initialRoute": "introduction",
+    "colors": {
+      "light": { "brand": "#3B82F6" },
+      "dark": { "brand": "#60A5FA" }
+    }
+  }
+  ```
+  ```yaml
+  name: My Documentation
+  initialRoute: introduction
+  colors:
+    light:
+      brand: "#3B82F6"
+    dark:
+      brand: "#60A5FA"
+  ```
+</CodeGroup>
+
+## Navigation Configuration
+
+Structure your documentation with tabs, groups, and pages.
+
+<Tabs>
+  <Tab title="Tabs" icon="layout">
+    Organize content into top-level sections like Documentation, API, and Changelog.
+    <Callout kind="tip">Use icons to make navigation more intuitive.</Callout>
+  </Tab>
+  <Tab title="Groups" icon="folder">
+    Group related pages within tabs for better organization.
+    <Callout kind="info">Groups can be expandable or collapsed by default.</Callout>
+  </Tab>
+  <Tab title="Pages" icon="file-text">
+    Individual documentation pages with rich content and components.
+    <Callout kind="success">Each page supports multiple components for engaging content.</Callout>
+  </Tab>
+</Tabs>
+
+## Theming and Branding
+
+Customize the appearance of your documentation site.
+
+<ExpandableGroup>
+  <Expandable title="Color Customization" default-open="true">
+    Define brand colors for both light and dark modes.
+  </Expandable>
+  <Expandable title="Typography" default-open="false">
+    Configure fonts, sizes, and text styling options.
+  </Expandable>
+  <Expandable title="Component Styling" default-open="false">
+    Customize the appearance of components like cards and buttons.
+  </Expandable>
+</ExpandableGroup>
+
+## Advanced Settings
+
+Fine-tune performance and functionality.
+
+<Callout kind="alert">Advanced settings can impact site performance if not configured properly.</Callout>
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| Caching | Enable caching for faster page loads | Enabled |
+| Compression | Compress assets for better performance | Enabled |
+| Analytics | Integrate with analytics platforms | Disabled |
+| Search | Enable full-text search functionality | Enabled |
+
+## Environment Variables
+
+Use environment variables for sensitive configuration.
+
+<CodeGroup tabs="bash,powershell">
+  ```bash
+export KOTTLIN_TRI_API_KEY="your-api-key"
+export KOTTLIN_TRI_ENVIRONMENT="production"
+  ```
+  ```powershell
+$env:KOTTLIN_TRI_API_KEY="your-api-key"
+$env:KOTTLIN_TRI_ENVIRONMENT="production"
+  ```
+</CodeGroup>
+
+## Deployment Configuration
+
+Configure deployment settings for different environments.
+
+<Expandable title="Development Setup" default-open="false">
+  Use local development settings with hot reloading and debug logging.
+</Expandable>
+
+<Expandable title="Production Deployment" default-open="false">
+  Optimize for production with minification, CDN integration, and monitoring.
+</Expandable>
+
+<Expandable title="CI/CD Integration" default-open="false">
+  Automate deployment with continuous integration pipelines.
+</Expandable>
+
+## Troubleshooting Configuration
+
+Common configuration issues and solutions.
+
+<Card title="Configuration Validator" icon="check-circle" href="/tools/validator" cta="Validate Config">
+  Use our online validator to check your configuration for errors.
+</Card>
+
+<Card title="Debug Mode" icon="bug" href="#debug-mode" cta="Enable Debug">
+  Enable debug mode to see detailed configuration information.
+</Card>
